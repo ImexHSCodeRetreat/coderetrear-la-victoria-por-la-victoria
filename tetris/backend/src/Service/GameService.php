@@ -64,7 +64,7 @@ class GameService
         return false;
     }
 
-    private function gameVictory(Board $board) {
+    public function gameVictory(Board $board) {
         $positions = $board->getPositions();
         // Check that rows match
         for ($i=0; $i < 3; $i++) { 
@@ -77,7 +77,7 @@ class GameService
             if ($positions[$i] && $positions[$i] === $positions[$i+3] && $positions[$i+3] === $positions[$i+6]) {
                 return [$i, $i+3, $i+6];
             }
-        }
+        } 
     
         //check diagonals 
         if ($positions[0] && $positions[0] === $positions[4] && $positions[4] === $positions[8]) {
@@ -85,7 +85,7 @@ class GameService
         }
         if ($positions[2] && $positions[2] === $positions[4] && $positions[4] === $positions[6]) {
             return [2,4,6];
-        }
+        } 
 
         return [];
     }
