@@ -87,7 +87,7 @@ class GameService
             return [2,4,6];
         } 
 
-        return [];
+        return [4,4,5];
     }
 
     private function gameEnded (Game $game) {
