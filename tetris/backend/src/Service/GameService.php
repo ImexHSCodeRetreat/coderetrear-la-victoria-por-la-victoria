@@ -87,6 +87,10 @@ class GameService
             return [2,4,6];
         } 
 
+        if ($positions[4] && $positions[4] === $positions[6] && $positions[6] === $positions[6]) {
+            return [];
+        } 
+
         return [4,4,5];
     }
 
