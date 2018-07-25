@@ -36,4 +36,17 @@ class GameServiceTest extends WebTestCase
        $this->assertEquals($p,[2,4,6],'Ganador');
       
     }
+
+    public function testGameVictory2()
+    {  
+
+       $b= new Board;
+       $board = $b->setPositions(array(
+           'o','x','o',
+           'x','o','x',
+           'x','o','x'));
+       $p = $this->serv->gameVictory($board);
+       $this->assertEquals($p,[],'Ganador');
+      
+    }
 }
