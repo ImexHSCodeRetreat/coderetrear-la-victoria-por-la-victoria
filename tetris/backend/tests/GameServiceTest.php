@@ -23,13 +23,17 @@ class GameServiceTest extends WebTestCase
     }
 
 
+ 
     public function testGameVictory()
     {  
 
        $b= new Board;
-       $board = $b->setPositions(array('o','o','o','o','o','o','o','o','o'));
+       $board = $b->setPositions(array(
+           'o','x','o',
+           'x','o','x',
+           'o','o','x'));
        $p = $this->serv->gameVictory($board);
-       $this->assertEquals(count($p),3,'Ganador');
+       $this->assertEquals($p,[2,4,6],'Ganador');
       
     }
 }
